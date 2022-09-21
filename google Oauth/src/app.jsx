@@ -29,7 +29,7 @@ export function App() {
 
   useEffect (()=>{
     // global google, remember about script in html
-    google.accounts.id.initialize(
+    google.accounts.id.initialize( // google cllient id -> aud
       {
         client_id: "1058515538107-mgrqpprk5rbvfdlanfhroggc44jh8ln1.apps.googleusercontent.com",
         callback: handleCallbackResponse
@@ -52,10 +52,12 @@ export function App() {
       {/* we check if user exist, if yes, do not show sign out button 
         so if the first part is true, show the secon &&
       */}
-      {
+      
+      {/* this doesnt work always, figure out how to show logout button */}
+      {/* {
         Object.keys(user).length !=0 &&
         <button onClick={ (e) => handleSignOut (e)}> Sign out</button>
-      }
+      } */}
 
       
       {/* if user exist show data about user */}
